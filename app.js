@@ -2,10 +2,8 @@ const express = require("express");
 const bodyParser=require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
-const _ = require("lodash");
 const date=require(__dirname+"/date.js");
 const app=express();
-var path = require('path');
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname +"/public"));
@@ -14,7 +12,6 @@ app.set('view engine', 'ejs');
 var port = process.env.PORT || 3000;
 var url = process.env.DB_URI || "mongodb://localhost:27017/moneyDB";
 mongoose.connect(url,{useNewUrlParser: true, useUnifiedTopology: true});
-
 
 const infoSchema = new mongoose.Schema({
   name:String,
