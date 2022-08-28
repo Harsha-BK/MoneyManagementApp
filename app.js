@@ -24,7 +24,7 @@ const day=date.getDate();
 
 const Data = mongoose.model("Data",infoSchema);
 
-app.get('/favicon.ico', (req, res) => res.status(204));
+ app.get('/favicon.ico', (req, res) => res.status(204));
 
 app.get("/",function(req,res){
   res.render("home");
@@ -38,7 +38,6 @@ app.get("/:types",function(req,res){
       console.log(err)
     }
     else{
-      
       res.render(types,{details_in_ejs:result});
     }
   })
@@ -52,7 +51,6 @@ app.post("/:types",function(req,res){
       console.log(err)
     }
     else{
-      
       res.render(types,{details_in_ejs:result});
     }
   })
