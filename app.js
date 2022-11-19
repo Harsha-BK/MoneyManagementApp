@@ -43,18 +43,18 @@ app.get("/:types",function(req,res){
   })
 });
 
-app.post("/:types",function(req,res){
-  const types =(req.params.types);
+// app.post("/:types",function(req,res){
+//   const types =(req.params.types);
   
-  Data.find({type:types},function(err,result){
-    if(err){
-      console.log(err)
-    }
-    else{
-      res.render(types,{details_in_ejs:result});
-    }
-  })
-});
+//   Data.find({type:types},function(err,result){
+//     if(err){
+//       console.log(err)
+//     }
+//     else{
+//       res.render(types,{details_in_ejs:result});
+//     }
+//   })
+// });
 
 app.get("/:types/add",function(req,res){
   res.render("add",{types:req.params.types});
@@ -104,7 +104,6 @@ app.post("/:types/add",function(req,res){
   const p_name=req.body.name;
   const p_amount=req.body.amount;
 
-  const crud=req.params.crud
 
   const details={
     name:p_name,
