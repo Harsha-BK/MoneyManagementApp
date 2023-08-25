@@ -7,6 +7,7 @@ const app=express();
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname +"/public"));
+
 app.set('view engine', 'ejs');
 
 var port = process.env.PORT || 3000;
@@ -43,19 +44,6 @@ app.get("/:types",function(req,res){
   })
 });
 
-// app.post("/:types",function(req,res){
-//   const types =(req.params.types);
-  
-//   Data.find({type:types},function(err,result){
-//     if(err){
-//       console.log(err)
-//     }
-//     else{
-//       res.render(types,{details_in_ejs:result});
-//     }
-//   })
-// });
-
 app.get("/:types/add",function(req,res){
   res.render("add",{types:req.params.types});
 })
@@ -84,7 +72,6 @@ app.get("/:types/delete/:id",function(req,res){
 })
 
 app.post("/:types/edit/:id",function(req,res){
-  // const crud=req.params.crud;
   const types=req.params.types;
   const id=req.params.id;
   

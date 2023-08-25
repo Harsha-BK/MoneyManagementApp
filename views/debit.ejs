@@ -22,17 +22,17 @@
       </tr>
     </thead>
     <tbody>
-      
+
         <%  details_in_ejs.forEach(function(i){ %>
           <tr>
             <td> <%=i.name %></td>
-            <td> <%=i.amount %></td> 
-            <td> <%=i.date %></td> 
+            <td> <%=i.amount %></td>
+            <td> <%=i.date %></td>
             <td><a href="/debit/edit/<%=i.id %>">Edit</a> </td>
             <td><a href="/debit/delete/<%=i.id %>">Delete</a> </td>
           </tr>
        <%  }) %>
-      
+
     </tbody>
   </table>
 
