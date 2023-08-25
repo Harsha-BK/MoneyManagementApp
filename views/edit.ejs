@@ -1,0 +1,15 @@
+<%- include("header"); -%>
+
+<h2>Edit</h2>
+
+<form class="container" action="/<%= types %>/edit/<%= result.id %>" method="post">
+    <div class="form-group">
+      <label>Name</label>
+      <input class="form-control" type="text" name="name" value="<%= result.name %>" required autocomplete="off">
+      <label>Amount</label>
+      <input class="form-control" type="text" name="amount" value="<%= result.amount %>" required autocomplete="off">
+    </div>
+      <button class="btn" type="submit" name="button">EDIT</button>
+      <button class="btn" type="submit" name="button"><a href="/<%= types %>">BACK</a></button>
+    
+  </form>
